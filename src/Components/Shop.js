@@ -1,10 +1,11 @@
 import React from 'react'
-// import { bindActionCreators } from 'redux'
+import { bindActionCreators } from 'redux'
 import { actionCreators } from '../state/index'
 import { useDispatch } from 'react-redux'
 
 export const Shop = () => {
     const dispatch = useDispatch();  
+    const actions = bindActionCreators(actionCreators,dispatch)
     return (
         <div className="row row-cols-1 row-cols-md-3 g-4">
             <div className="col">
@@ -13,9 +14,9 @@ export const Shop = () => {
                     <div className="card-body">
                         <h5 className="card-title">Orange</h5>
                         <p className="card-text">Get a burst of sunshine in every bite with our fresh, juicy oranges—picked at the peak of ripeness for a naturally sweet and tangy flavor!</p>
-                        <button className='btn btn-primary mx-4' onClick={()=>{dispatch(actionCreators.withdrawMoney(100))}}>-</button>
+                        <button className='btn btn-primary mx-4' onClick={()=>{actions.withdrawMoney(100)}}>-</button>
                         1
-                        <button className='btn btn-primary mx-4' onClick={()=>{dispatch(actionCreators.depositMoney(100))}}>+</button>
+                        <button className='btn btn-primary mx-4' onClick={()=>{actions.depositMoney(100)}}>+</button>
                     </div>
                 </div>
             </div>
