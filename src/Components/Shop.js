@@ -1,10 +1,10 @@
-import React, { act } from 'react'
-import { bindActionCreators } from 'redux'
-import { actionCreators } from '../state/action-creators/index'
+import React from 'react'
+// import { bindActionCreators } from 'redux'
+import { actionCreators } from '../state/index'
 import { useDispatch } from 'react-redux'
 
 export const Shop = () => {
-    const dispatch = useDispatch()    
+    const dispatch = useDispatch();  
     return (
         <div className="row row-cols-1 row-cols-md-3 g-4">
             <div className="col">
